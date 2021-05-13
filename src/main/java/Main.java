@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class Main {
     public final static String directory = "src/main/resources";
     public final static int NUMBER_OFTEN_USED_WORDS = 4;
-
     public static void main(String[] args) throws IOException {
         var deleteSwearWord = new StringBuilder();
         var resultWord = new StringBuilder();
