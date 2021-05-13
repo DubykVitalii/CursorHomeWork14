@@ -10,12 +10,10 @@ public class Main {
     public final static int NUMBER_OFTEN_USED_WORDS = 4;
 
     public static void main(String[] args) throws IOException {
-
         var deleteSwearWord = new StringBuilder();
         var resultWord = new StringBuilder();
         var counterTotalWords = 0;
         var counterDeleteWords = 0;
-
         var pathFileData = Path.of(directory, "data.txt");
         var pathResultWords = Path.of(directory, "dataresult.txt");
         var pathDeletedWords = Path.of(directory, "deletedwords.txt");
@@ -66,7 +64,6 @@ public class Main {
         System.out.println("Deleted words:" + counterDeleteWords);
         System.out.println("Total words:" + counterTotalWords);
     }
-
     /**
      * Check for swear words
      */
