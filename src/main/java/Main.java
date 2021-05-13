@@ -55,7 +55,12 @@ public class Main {
         /**
          * Printing NUMBER_OFTEN_USED_WORDS words that are most common in the text
          * */
-        words.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue().reversed()).limit(NUMBER_OFTEN_USED_WORDS).forEach(System.out::println);
+        words.entrySet().stream().
+                sorted(Map.Entry.
+                        <String, Integer>comparingByValue().
+                        reversed()).
+                limit(NUMBER_OFTEN_USED_WORDS).
+                forEach(System.out::println);
         /**
          * Write deleted words to a file
          * */
@@ -68,15 +73,14 @@ public class Main {
      */
     private static boolean filterSwearWords(String word) throws IOException {
         var pathFileSwearWords = Path.of(directory, "swearwords.txt");
-        var isSwearWord = false;
         try (var scanner = new Scanner(pathFileSwearWords)) {
             while (scanner.hasNext()) {
                 String swearword = scanner.next().replace(",", "");
                 if (word.equals(swearword)) {
-                    isSwearWord = true;
+                    return true;
                 }
             }
         }
-        return isSwearWord;
+        return false;
     }
 }
